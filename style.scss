@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.4s;
+}
+$grey: rgb(227, 226, 229);
+$dark: #333;
+$secondary: #7c7c7c;
+$white: #fff;
+$red: #fc3441;
+$border-radius: 0.5rem;
+
+body {
+  color: $dark;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  max-width: 80vw;
+  margin: 0 auto;
+  padding-top: 40vh;
+  .logo {
+    width: 130px;
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    li {
+      width: 32%;
+      height: 300px;
+      @media screen and (max-width: 992px) {
+        width: 48%;
+        height: 200px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: $border-radius;
+        cursor: pointer;
+        &:hover {
+          transform: scale(1.02);
+          box-shadow: 0px 20px 20px rgba($dark, 0.5);
+        }
+      }
+    }
+  }
+  .form-wrapper {
+    .form {
+      padding: 1rem 0rem;
+      input {
+        width: 80vw;
+        height: 50px;
+        padding: 1rem;
+        border: 1px solid $grey;
+        border-radius: $border-radius;
+        outline: none;
+        font-size: 1rem;
+        &::placeholder {
+          color: $secondary;
+        }
+      }
+      position: relative;
+      .btn-search {
+        background-color: $red;
+        border: 0px;
+        padding: 0.75rem;
+        position: absolute;
+        right: 0px;
+        bottom: 17px;
+        border: 1px solid $red;
+        border-top-right-radius: $border-radius;
+        border-bottom-right-radius: $border-radius;
+        cursor: pointer;
+        svg {
+          width: 20px;
+          fill: $white;
+        }
+      }
+      .btn-clear {
+        position: absolute;
+        bottom: 28px;
+        right: 60px;
+        background-color: transparent;
+        border: none;
+        svg {
+          width: 20px;
+          fill: $dark;
+        }
+      }
+    }
+  }
+}
+
+.d-none {
+  display: none;
+}
